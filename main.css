@@ -41,6 +41,15 @@ body {
   background-color: #009E74;
   grid-column: sidebar-start / sidebar-end;
   grid-row: 1 / -1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1rem;
+  font-size: 4rem;
+  color: #fff;
 }
 
 .header {
@@ -57,13 +66,32 @@ body {
 .nav {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[6];
-      grid-template-columns: repeat(6, 1fr);
+  -ms-grid-columns: (minmax(15rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: 2rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   list-style: none;
+}
+
+.nav__link:link, .nav__link:visited {
+  display: block;
+  padding: 1.5rem;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.4rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav__link:hover, .nav__link:active {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .copyright {
