@@ -37,6 +37,70 @@ body {
       grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 }
 
+.heading-1 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  font-size: 4.5rem;
+  color: #f9f7f6;
+  line-height: 1;
+}
+
+.heading-2 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  font-size: 4rem;
+  font-style: italic;
+  line-height: 1;
+}
+
+.heading-2--light {
+  color: #f9f7f6;
+}
+
+.heading-2--dark {
+  color: #007460;
+}
+
+.heading-3 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #009E74;
+  text-transform: uppercase;
+}
+
+.heading-4 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.9rem;
+}
+
+.heading-4--light {
+  color: #f9f7f6;
+}
+
+.heading-4--dark {
+  color: #007460;
+}
+
+.btn {
+  background-color: #009E74;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding: 1.8rem 3rem;
+  cursor: pointer;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.btn:hover {
+  background-color: #00826b;
+}
+
 .sidebar {
   background-color: #009E74;
   grid-column: sidebar-start / sidebar-end;
@@ -53,8 +117,76 @@ body {
 }
 
 .header {
-  background-color: #007460;
   grid-column: full-start / col-end 6;
+  padding: 8rem;
+  padding-top: 4rem;
+  background-color: #007460;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 29, 44, 0.93)), to(rgba(16, 29, 44, 0.93))), url(./img/hero.jpeg);
+  background-image: linear-gradient(rgba(16, 29, 44, 0.93), rgba(16, 29, 44, 0.93)), url(./img/hero.jpeg);
+  background-size: cover;
+  background-position: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+      grid-template-rows: 1fr -webkit-min-content minmax(6rem, -webkit-min-content) 1fr;
+      grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+  grid-row-gap: 1,5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header__patrocinadores-logos {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__patrocinadores-logos img {
+  max-height: 2.5rem;
+  max-width: 100%;
+  -webkit-filter: brightness(70%);
+          filter: brightness(70%);
+}
+
+.header__patrocinadores-text {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr max-content 1fr;
+      grid-template-columns: 1fr -webkit-max-content 1fr;
+      grid-template-columns: 1fr max-content 1fr;
+  grid-column-gap: 1.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.6rem;
+  color: #aaa;
+}
+
+.header__patrocinadores-text::before, .header__patrocinadores-text::after {
+  content: "";
+  height: 1px;
+  display: block;
+  background-color: currentColor;
+}
+
+.header__logo {
+  height: 5rem;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.header__btn {
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  -ms-grid-column-align: start;
+      justify-self: start;
 }
 
 .footer {
@@ -109,10 +241,50 @@ body {
 .empreendedores {
   background-color: #101d2c;
   grid-column: col-strat 7 / full-end;
+  padding: 3rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-items: center;
+  grid-row-gap: 2rem;
+}
+
+.empreendedores__list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: min-content max-content;
+      grid-template-columns: -webkit-min-content -webkit-max-content;
+      grid-template-columns: min-content max-content;
+  grid-column-gap: 2rem;
+  grid-row-gap: 5vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.empreendedores__img {
+  width: 7rem;
+  border-radius: 50%;
+  display: block;
+}
+
+.empreendedores__sod {
+  text-transform: uppercase;
+  color: #aaa;
+  margin-top: -3px;
 }
 
 .features {
   grid-column: center-start / center-end;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 6rem;
 }
 
 .story__pictures {
