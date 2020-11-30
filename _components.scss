@@ -107,6 +107,38 @@
 }
 .projetos{
     grid-column: center-start / center-end;
+    margin: 15rem 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 7rem;
+
+    .projeto {
+        background-color: $color-grey-light-1;
+
+        &__img {
+            width: 100%;
+        }
+        &__like {
+        }
+        &__name {
+        }
+        &__location,
+        &__rooms,
+        &__area,
+        &__price {
+            svg {
+                height: 2rem;
+                width: 2rem;
+            }
+            p {
+
+            }
+        }
+        &__btn {
+            
+        }
+    }
 }
 .gallery {
     background-color: $color-grey-light-1;

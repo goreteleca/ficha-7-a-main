@@ -392,6 +392,25 @@ body {
 
 .projetos {
   grid-column: center-start / center-end;
+  margin: 15rem 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 7rem;
+}
+
+.projetos .projeto {
+  background-color: #f9f7f6;
+}
+
+.projetos .projeto__img {
+  width: 100%;
+}
+
+.projetos .projeto__location svg, .projetos .projeto__rooms svg, .projetos .projeto__area svg, .projetos .projeto__price svg {
+  height: 2rem;
+  width: 2rem;
 }
 
 .gallery {
